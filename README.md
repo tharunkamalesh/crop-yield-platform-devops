@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌾 AI Crop Yield Prediction & Advisory Platform
 
 A comprehensive web and mobile application that uses machine learning to predict crop yields and provide farming recommendations. Built with React frontend, Flask backend, and integrated with weather APIs and notification services.
@@ -319,3 +320,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Built with ❤️ for farmers worldwide**
 
 *Empowering agriculture through AI and technology*
+=======
+# Ai-based-platform-for-crop-yield-optimization
+Developed an AI-powered crop yield optimization platform that uses ML, IoT, and predictive analytics to analyze soil, weather, and crop data. Provides real-time insights for irrigation, fertilization, and pest control—helping farmers boost yield sustainably.
+>>>>>>> fd253d8da917d8cd18ea278cb91d9943f36db069
