@@ -109,17 +109,17 @@ The application automatically creates the required database tables on first run.
 
 ## 🌍 Language Support
 
-### English (en)
+### English 
 - Primary interface language
 - Complete feature coverage
 - Technical terminology
 
-### Hindi (hi)
+### Hindi 
 - भारतीय किसानों के लिए
 - स्थानीय फसल नाम
 - सरल भाषा में सलाह
 
-### Tamil (ta)
+### Tamil 
 - தமிழ் விவசாயிகளுக்காக
 - பிராந்திய பயிர் வகைகள்
 - புரிந்துகொள்ளக்கூடிய வழிகாட்டுதல்
@@ -285,10 +285,6 @@ Set production environment variables in your deployment platform:
 - **CSS**: Tailwind CSS classes
 - **Documentation**: Clear docstrings and comments
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **OpenWeather**: Weather data API
@@ -320,5 +316,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *Empowering agriculture through AI and technology*
 
-# Ai-based-platform-for-crop-yield-optimization
-Developed an AI-powered crop yield optimization platform that uses ML, IoT, and predictive analytics to analyze soil, weather, and crop data. Provides real-time insights for irrigation, fertilization, and pest control—helping farmers boost yield sustainably.
+
