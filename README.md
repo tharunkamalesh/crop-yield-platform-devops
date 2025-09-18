@@ -310,7 +310,6 @@ Set production environment variables in your deployment platform:
 - **Discord**: Real-time chat support
 - **YouTube**: Tutorial videos
 
----
 
 **Built with ❤️ for farmers worldwide**
 
