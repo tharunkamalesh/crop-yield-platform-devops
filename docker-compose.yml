@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  crop-backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - ./backend:/app
+    networks:
+      - crop-network
+
+  crop-frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://crop-backend:5000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - crop-backend
+    networks:
+      - crop-network
+
+networks:
+  crop-network:
+    driver: bridge
