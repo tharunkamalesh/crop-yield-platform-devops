@@ -1,0 +1,32 @@
+name: CI/CD Pipeline - Crop Yield Platform
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: $ secrets.DOCKERHUB_USERNAME 
+          password: $ secrets.DOCKERHUB_TOKEN 
+
+      - name: Build frontend image
+        run: docker build -t tharunkamalesh/crop-frontend:latest ./frontend
+
+      - name: Push frontend image
+        run: docker push tharunkamalesh/crop-frontend:latest
+
+      - name: Build backend image
+        run: docker build -t tharunkamalesh/crop-backend:latest ./backend
+
+      - name: Push backend image
+        run: docker push tharunkamalesh/crop-backend:latest
