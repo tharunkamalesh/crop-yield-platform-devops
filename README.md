@@ -223,6 +223,9 @@ cd frontend
 npm test
 ```
 
+### CI/CD Pipeline Testing
+Testing CI/CD pipeline — Tharun
+
 ### API Testing
 ```bash
 # Test prediction endpoint
