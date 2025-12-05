@@ -33,8 +33,17 @@ jobs:
             sleep 10
           done
 
+      - name: Verify frontend image exists
+        run: |
+          if ! docker image inspect ${{ secrets.DOCKERHUB_USERNAME }}/crop-frontend:latest >/dev/null 2>&1; then
+            echo "Frontend build failed after retries. Stopping pipeline."
+            exit 1
+          fi
+
       - name: Push frontend image
-        run: docker push tharunkamalesh/crop-frontend:latest
+        if: success()
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/crop-frontend:latest
 
       - name: Build backend image
         run: docker build -t tharunkamalesh/crop-backend:latest ./backend
