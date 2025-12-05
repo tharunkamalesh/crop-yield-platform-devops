@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 0
 
     steps:
       - name: Checkout code
@@ -20,7 +22,16 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build frontend image
-        run: docker build -t tharunkamalesh/crop-frontend:latest ./frontend
+        run: |
+          for i in 1 2 3; do
+            echo "Building frontend image (attempt $i)..."
+            if docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/crop-frontend:latest ./frontend ; then
+              echo "Frontend build succeeded."
+              break
+            fi
+            echo "Build failed, retrying in 10 seconds..."
+            sleep 10
+          done
 
       - name: Push frontend image
         run: docker push tharunkamalesh/crop-frontend:latest
